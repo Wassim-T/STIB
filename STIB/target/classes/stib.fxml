@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.controlsfx.control.SearchableComboBox?>
+
+<AnchorPane prefHeight="520.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ControllerFXML">
+   <children>
+      <VBox fx:id="vboxParent" layoutX="67.0" layoutY="56.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar fx:id="menuBar" prefHeight="26.0" prefWidth="600.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <ImageView fx:id="imgNetwork" fitHeight="200.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+               <image>
+                  <Image url="@metro.png" />
+               </image>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ImageView>
+            <HBox fx:id="hboxParent" prefHeight="330.0" prefWidth="800.0">
+               <children>
+                  <VBox fx:id="vboxChild" prefHeight="318.0" prefWidth="367.0">
+                     <children>
+                        <ImageView fx:id="imgLogo" fitHeight="80.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@logo_STIB.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="100.0" />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox fx:id="hboxChild1" prefHeight="13.0" prefWidth="346.0">
+                           <children>
+                              <Label fx:id="labelOrigine" text="Origine :">
+                                 <HBox.margin>
+                                    <Insets left="65.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <SearchableComboBox fx:id="scbOrigine" prefHeight="20.0" prefWidth="180.0">
+                                 <HBox.margin>
+                                    <Insets left="35.0" />
+                                 </HBox.margin>
+                              </SearchableComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="hboxChild2" prefHeight="25.0" prefWidth="357.0">
+                           <children>
+                              <Label fx:id="labelDestination" text="Destination :">
+                                 <HBox.margin>
+                                    <Insets left="75.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <SearchableComboBox fx:id="scbDestination" prefHeight="26.0" prefWidth="178.0">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </SearchableComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox fx:id="hboxChild3" prefHeight="26.0" prefWidth="357.0">
+                           <children>
+                              <Label fx:id="labelFavoris" text="Favoris :">
+                                 <HBox.margin>
+                                    <Insets left="75.0" right="22.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <SearchableComboBox fx:id="scbFavoris" prefHeight="26.0" prefWidth="178.0">
+                                 <HBox.margin>
+                                    <Insets left="15.0" />
+                                 </HBox.margin>
+                              </SearchableComboBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Button fx:id="btnAjouterFavoris" mnemonicParsing="false" prefHeight="26.0" prefWidth="142.0" text="Ajouter aux favoris">
+                           <VBox.margin>
+                              <Insets left="130.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnSupprimerFavoris" mnemonicParsing="false" prefHeight="26.0" prefWidth="141.0" text="Supprimer des favoris">
+                           <VBox.margin>
+                              <Insets left="130.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnRechercher" mnemonicParsing="false" prefHeight="26.0" prefWidth="140.0" text="Rechercher">
+                           <VBox.margin>
+                              <Insets left="130.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="tableView" prefHeight="319.0" prefWidth="433.0">
+                    <columns>
+                      <TableColumn fx:id="colStations" prefWidth="221.60000306367874" text="STATIONS" />
+                      <TableColumn fx:id="colLignes" prefWidth="202.3999786376953" text="LIGNES" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TableView>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

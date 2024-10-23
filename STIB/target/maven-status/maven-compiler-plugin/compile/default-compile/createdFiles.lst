@@ -1,0 +1,5 @@
+model\dto\FavoriteDto.class
+view\ViewFavoris.class
+view\ControllerFavorisFXML.class
+view\ViewMain.class
+model\jdbc\FavoriteDao.class
